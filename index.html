@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooks Promo | Sulaiman Lifa</title>
+  <meta name="description"
+        content="Dooks Promo — the personal brand and journey of Sulaiman Lifa.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .logo span {
+      color: #aaa;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: #aaa;
+    }
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 25px 60px;
+      background:
+        radial-gradient(circle at center, #222 0%, #080808 55%);
+    }
+    .hero-content {
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-size: clamp(50px, 10vw, 100px);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      color: #999;
+    }
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid white;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: white;
+      color: black;
+    }
+    .button.secondary {
+      border-color: #444;
+      color: #ccc;
+    }
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .section-subtitle {
+      color: #888;
+      margin-bottom: 45px;
+    }
+    /* ABOUT */
+    .about-box {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 40px;
+    }
+    .about-box p {
+      color: #ccc;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+    /* GOALS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .card p {
+      color: #999;
+    }
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .gallery-item {
+      height: 250px;
+      background: #151515;
+      border: 1px solid #222;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      text-align: center;
+      overflow: hidden;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 50px 25px;
+    }
+    .contact-box p {
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact-links a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid #333;
+      padding: 12px 20px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+    .contact-links a:hover {
+      background: white;
+      color: black;
+    }
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 1px solid #222;
+      color: #666;
+      font-size: 14px;
+    }
+    /* MOBILE */
+    @media (max-width: 750px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        gap: 15px;
+      }
+      .nav-links a {
+        font-size: 12px;
+      }
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item {
+        height: 300px;
+      }
+      .about-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        DOOKS<span>PROMO</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- HERO / HOME -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>
+        DOOKS<span>PROMO</span>
+      </h1>
+      <p>
+        Building the future, one step at a time.
+      </p>
+      <div class="buttons">
+        <a href="#about" class="button">
+          About Me
+        </a>
+        <a href="#contact" class="button secondary">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">
+      About Me
+    </h2>
+    <p class="section-subtitle">
+      The person behind Dooks Promo.
+    </p>
+    <div class="about-box">
+      <p>
+        My name is <strong>Sulaiman Lifa</strong>, also known as Dooks.
+        I'm an ambitious young entrepreneur focused on building a
+        successful future for myself and my family.
+      </p>
+      <p>
+        My biggest goal is to create a life where I can give back to
+        my parents, support my family, and build something that can
+        benefit future generations.
+      </p>
+      <p>
+        I believe success comes from consistency, hard work, learning
+        from mistakes, and never giving up on your vision.
+      </p>
+      <p>
+        Dooks Promo is the beginning of that journey. I'm working
+        towards building my personal brand and eventually launching
+        my own clothing line.
+      </p>
+      <p>
+        <strong>This is only the beginning — there's a lot more to come.</strong>
+      </p>
+    </div>
+  </section>
+  <!-- GOALS -->
+  <section id="goals">
+    <h2 class="section-title">
+      My Vision
+    </h2>
+    <p class="section-subtitle">
+      What I'm working towards.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Family</h3>
+        <p>
+          Build a successful future and create opportunities
+          that allow me to give back to my family.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Business</h3>
+        <p>
+          Grow Dooks Promo into a strong personal brand and
+          create meaningful business opportunities.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Clothing Line</h3>
+        <p>
+          One day, turn the vision into reality by launching
+          my own clothing brand.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="section-title">
+      Gallery
+    </h2>
+    <p class="section-subtitle">
+      A place for my journey, projects and future work.
+    </p>
+    <div class="gallery">
+      <div class="gallery-item">
+        Add Photo 1
+      </div>
+      <div class="gallery-item">
+        Add Photo 2
+      </div>
+      <div class="gallery-item">
+        Add Photo 3
+      </div>
+      <div class="gallery-item">
+        Add Photo 4
+      </div>
+      <div class="gallery-item">
+        Add Photo 5
+      </div>
+      <div class="gallery-item">
+        Add Photo 6
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">
+      Contact
+    </h2>
+    <p class="section-subtitle">
+      Let's connect.
+    </p>
+    <div class="contact-box">
+      <p>
+        For enquiries, collaborations or opportunities,
+        you can contact me through any of the platforms below.
+      </p>
+      <div class="contact-links">
+        <a href="https://wa.me/27659851267" target="_blank">
+          WhatsApp
+        </a>
+        <a href="https://instagram.com/_.suliii.__" target="_blank">
+          Instagram
+        </a>
+        <a href="mailto:dookachino@icloud.com">
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Dooks Promo — Sulaiman Lifa
+  </footer>
+</body>
+</html>
